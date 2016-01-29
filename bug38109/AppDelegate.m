@@ -8,6 +8,18 @@
 
 #import "AppDelegate.h"
 
+@interface PlayerViewController : UIViewController
+-(id) init;
+@end
+
+@implementation PlayerViewController
+-(id) init
+{
+    NSLog (@"PVC init: %p", self);
+    return [super init];
+}
+@end
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +29,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    PlayerViewController *pvc = [[PlayerViewController alloc] init];
+    UIView *view = pvc.view;
+    NSLog (@"view: %@", view);
+    
     return YES;
 }
 
